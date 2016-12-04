@@ -1,8 +1,11 @@
 kaplanMeier <- function(survivalTime, statusVariable, status, factors, survivalTable = TRUE, caseSummary = TRUE, hr=TRUE, 
                         meanMedianSurvivalTimes = TRUE, quartilesOfSurvivalTimes = FALSE, ci = "log", 
                         varianceEstimation = "greenwood", comparisonTest = "logRank", confidenceLevel = 95,
-                        referenceCategory = "first", typeOfTest = "asymptotic", kmCurve = TRUE, data = dataSet){
-  
+                        referenceCategory = "first", typeOfTest = "asymptotic", kmCurve = TRUE, data = dataSet, ...){
+  # This function performs Kaplan-Meier Analysis for given dataset.
+  # Args:
+  #   survivalTime: a character string indicating the name of survival time variable.
+  #   ...
 fname = factors
 if(!is.null(survivalTime)){
   survivalTime = as.matrix(data[, survivalTime, drop = FALSE])
